@@ -428,13 +428,16 @@ Red Box Keyboard Proxy"""
         quit()
 
     if record_keys:
+        recorded_keys_path = "/var/tmp/keyboard_proxy_recorded_keys.txt"
         out.info(f"Connect a USB keyboard to any free USB-A port and start typing!")
         out.info(f"Recording keystrokes does NOT require a connection to a victim computer.")
-        kiri = Kiri(key_logs,raw_logs,True)
+        out.info(f"Recorded keystrokes are stored at {recorded_keys_path}.")
+        kiri = Kiri(key_logs,recorded_keys_path,True)
         kiri.run()
 
     elif repeat_keys:
-        out.info(f"Reading raw USB reports from {raw_logs} and repeating them as HID device!")
+        recorded_keys_path = "/var/tmp/keyboard_proxy_recorded_keys.txt"
+        out.info(f"Reading raw USB reports from {recorded_keys_path} and repeating them as HID device!")
         out.info(f"Make sure your USB-C port is connected to a victim computer!")
         keys = open(raw_logs,"rb")
         with open('/dev/hidg0', 'rb+') as fd:
