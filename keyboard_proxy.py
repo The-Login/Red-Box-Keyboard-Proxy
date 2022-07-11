@@ -89,6 +89,7 @@ class Kiri:
                 try:
                     data = categorize(event)
                     self.key_log_file.write(f"{str(data)}\n".encode())
+                    self.key_log_file.flush()
                     print(data)
                     emit, keycode, keystate = self.configuration.remap_intercept(kiri=self, data=data)
                     if emit is False:
@@ -153,6 +154,7 @@ class Kiri:
         self.log.debug('Writing report to output: %s', ":".join("{:02x}".format(c) for c in report.encode('utf-8')))
         with open(self.report_file, 'rb+') as fd:
             self.raw_log_file.write(report.encode())
+            self.raw_log_file.flush()
             fd.write(report.encode())
 
     @staticmethod
