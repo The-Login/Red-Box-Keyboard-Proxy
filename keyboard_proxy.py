@@ -417,7 +417,7 @@ Red Box Keyboard Proxy"""
 
     if os.geteuid() != 0:
         out.error("Root permissions required!")
-        quit()
+        quit(1)
 
     if not os.path.exists("/sys/kernel/config/usb_gadget/keyboard_proxy"):
         out.info("This looks like your first usage!")
@@ -425,7 +425,7 @@ Red Box Keyboard Proxy"""
         install()
         out.success("Installation (most likely) successful!")
         out.warning("Restart required!")
-        quit()
+        quit(1)
 
     if record_keys:
         out.info(f"Connect a USB keyboard to any free USB-A port and start typing!")
