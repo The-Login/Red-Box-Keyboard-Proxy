@@ -404,7 +404,7 @@ def install():
 @click.option('--raw-logs', help='Destination path for a raw USB report log file',type=str,required=True,default="/var/tmp/keyboard_proxy_usb_reports.txt",show_default=True)
 @click.option('--record-keys', help='Record typed keys (no proxying)',is_flag=True,default=False,show_default=True)
 @click.option('--repeat-keys', help='Repeats the logged keys',is_flag=True,default=False,show_default=True)
-def cli(key_logs,raw_logs,record_keys,repeat_keys,install_only):
+def cli(key_logs,raw_logs,record_keys,repeat_keys):
     """\b
 Red Box Keyboard Proxy"""
     print("""
