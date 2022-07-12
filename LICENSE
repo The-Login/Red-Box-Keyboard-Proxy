@@ -1,6 +1,7 @@
 MIT License
 
 Copyright (c) 2022 Login
+This file is part of Red Box Keyboard Proxy - A keyboard proxy adaption for the Red Box tool .
 Copyright (c) 2021 Viggo Falster
 This file is part of KIRI - Keyboard Interception, Remapping and Injection
 using Raspberry Pi as a HID Proxy.
